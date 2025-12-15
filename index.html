@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="branding">
+        <!-- <div class="dot"></div> -->
+        <h1>My Weather App</h1>
+      </div>
+      <div class="date-time" id="dateTime">--:--</div>
+    </header>
+
+    <main class="container">
+      <div class="search-container">
+        <section class="search-panel">
+          <form
+            id="searchForm"
+            class="search-form"
+            aria-label="Search for a city"
+          >
+            <input
+              id="cityInput"
+              type="text"
+              name="city"
+              placeholder="Enter city name"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" class="btn primary">Search</button>
+          </form>
+          <div class="controls">
+            <button
+              id="unitToggle"
+              type="button"
+              class="btn ghost"
+              aria-pressed="false"
+            >
+              Show °F
+            </button>
+          </div>
+          <div
+            id="recentSearches"
+            class="recent-searches"
+            aria-live="polite"
+          ></div>
+        </section>
+
+        <section class="status-row">
+          <div
+            id="spinner"
+            class="spinner hidden"
+            role="status"
+            aria-live="polite"
+            aria-label="Loading"
+          ></div>
+          <div id="errorBox" class="error hidden" role="alert"></div>
+        </section>
+      </div>
+
+      <section class="current-card" aria-live="polite">
+        <div class="current-top">
+          <div class="current-top-left">
+            <p class="label"style="margin-bottom: 5px;" >Current weather</p>
+            <h2 id="locationName">City, Country</h2>
+            <p id="conditionText" class="condition">Condition</p>
+          </div>
+          <div class="temp-block">
+            <img id="weatherIcon" src="" alt="" class="weather-icon" />
+            <p id="temperature" class="temperature">--°C</p>
+          </div>
+        </div>
+        <div class="current-meta">
+          <p id="humidity">Humidity: --%</p>
+          <p id="wind">Wind: -- km/h</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
